@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Gasto;
 use App\Aporte;
 use App\ConceptoAporte;
+use App\User;
 
 class PageController extends Controller
 {
@@ -29,6 +30,12 @@ class PageController extends Controller
         $concept = ConceptoAporte::all()->pluck('nombre','id');
         return view('welcome',compact('anio','mes','concept'));
         
+    }
+
+    public function user()
+    {
+        $user= User::all();
+        return view('user.index', compact('user'));
     }
 
 

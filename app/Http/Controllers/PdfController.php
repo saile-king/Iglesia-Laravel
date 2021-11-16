@@ -18,11 +18,11 @@ class PdfController extends Controller
     public function diezmospdf(){
     	$aportes = Aporte::all();
     	$total = Aporte::all()->sum('valor');
-    	$pdf = \App::make('dompdf.wrapper');
-    	$vista = \View('pdfs.diezmos', compact('aportes','total'))->render();
-		$pdf->loadHTML($vista);
-		return $pdf->download('Diezmos.pdf');
-		//return View('pdfs.diezmos', compact('aportes','total'));
+    	//$pdf = \App::make('dompdf.wrapper');
+    	//$vista = \View('pdfs.diezmos', compact('aportes','total'))->render();
+		//$pdf->loadHTML($vista);
+		//return $pdf->download('Diezmos.pdf');
+		return View('pdfs.diezmos', compact('aportes','total'));
     }
 
     public function aportepdf(Request $request){
@@ -36,7 +36,7 @@ class PdfController extends Controller
         $vista = \View('pdfs.aportes', compact('total_mes','aporte'))->render();
         $pdf->loadHTML($vista);
         return $pdf->download('Aportes.pdf');
-        //return View('pdfs.diezmos',compact('total_mes','aporte'));
+        //return View('pdfs.aportes',compact('total_mes','aporte'));
 
     }
 

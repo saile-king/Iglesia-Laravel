@@ -23,7 +23,7 @@ table td {text-align: center;}
 table th {padding: 5px 20px;color: #5D6975;border-bottom: 1px solid #C1CED9;white-space: nowrap;font-weight: normal;}
 table .service,
 table .desc {text-align: left;}
-table td {padding: 20px;text-align: right;}
+table td {padding: 6px;text-align: right;}
 table td.service,
 table td.desc {vertical-align: top;}
 table td.unit,

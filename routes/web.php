@@ -32,9 +32,9 @@ Route::get('gastospdf',['as'=>'gastospdf','uses'=>'PdfController@gastopdf']);
 Route::get('/totales',['as'=>'total','uses'=>'PageController@totales']);
 Route::get('diezmopdf',['as'=>'diezmospdf','uses'=>'PdfController@diezmospdf']);
 
-Route::get('/test','ChartDataController@getMonthlyOfrendaData');
+Route::get('usuario', 'PageController@user')->middleware('auth');
 
-
+Route::resource('usuarios', 'UserController');
 
 
 
